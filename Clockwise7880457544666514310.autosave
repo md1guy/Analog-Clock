@@ -1,0 +1,3 @@
+class Clockwise {
+  String type;
+}
