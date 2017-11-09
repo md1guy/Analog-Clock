@@ -21,6 +21,7 @@ void Update()
 {
   DrawSecondsClockwise();
   DrawMinutesClockwise();
+  DrawHourClockwise();
 }
 
 void DrawTimeline() {
