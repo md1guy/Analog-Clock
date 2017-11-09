@@ -1,3 +1,0 @@
-class Clockwise {
-  String type;
-}
