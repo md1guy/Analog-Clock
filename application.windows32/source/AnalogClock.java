@@ -54,7 +54,7 @@ public void DrawTimeline() {
 
   for (int i = 0; i < 4; i++) {
     float angle = (360 / 4) * i;
-    float radius = (height + width) / 2 / 4;
+    float radius = (height + width) / 4 - 10 ;
       
     float posX = cos(radians(angle)) * radius + width / 2;
     float posY = sin(radians(angle)) * radius + height / 2;
@@ -65,7 +65,7 @@ public void DrawTimeline() {
   strokeWeight(5);
   for (int i = 0; i < 12; i++) {
     float angle = (360 / 12) * i;
-    float radius = (height + width) / 2 / 4;
+    float radius = (height + width) / 4 - 10 ;
       
     float posX = cos(radians(angle)) * radius + width / 2;
     float posY = sin(radians(angle)) * radius + height / 2;
@@ -76,7 +76,7 @@ public void DrawTimeline() {
   strokeWeight(2);
   for (int i = 0; i < 60; i++) {
     float angle = (360 / 60) * i;
-    float radius = (height + width) / 2 / 4;
+    float radius = (height + width) / 4 - 10 ;
       
     float posX = cos(radians(angle)) * radius + width / 2;
     float posY = sin(radians(angle)) * radius + height / 2;
@@ -99,7 +99,7 @@ public void DrawSecondsClockwise() {
   } while(tmpSecond == curSecond);
   
   float angle = (360 / 60) *  curSecond - (90 - 360 / 60);
-  float radius = (height + width) / 2 / 4 - 7;
+  float radius = (height + width) / 4 - 10 - 7;
     
   float posX = cos(radians(angle)) * radius + width / 2;
   float posY = sin(radians(angle)) * radius + height / 2;
@@ -113,10 +113,9 @@ public void DrawMinutesClockwise() {
   
   LocalDateTime now = LocalDateTime.now();
   curMinute = Integer.valueOf(mins.format(now));
-  //int tmpMinute = Integer.valueOf(mins.format(now));;
 
   float angle = (360 / 60) *  curMinute - (90);
-  float radius = (height + width) / 2 / 4 - 7;
+  float radius = (height + width) / 4 - 10 - 7;
     
   float posX = cos(radians(angle)) * radius + width / 2;
   float posY = sin(radians(angle)) * radius + height / 2;
@@ -130,17 +129,16 @@ public void DrawHourClockwise() {
   
   LocalDateTime now = LocalDateTime.now();
   curHour = Integer.valueOf(hrs.format(now));
-  //int tmpHour = Integer.valueOf(hrs.format(now));;
 
   float angle = (360 / 60) *  curHour - (90);
-  float radius = (height + width) / 2 / 4 - 7;
+  float radius = (height + width) / 4 - 10 - 7;
     
   float posX = cos(radians(angle)) * radius + width / 2;
   float posY = sin(radians(angle)) * radius + height / 2;
   
   line(width / 2, height / 2, posX, posY);
 }
-  public void settings() {  size(640, 480); }
+  public void settings() {  size(300, 300); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "AnalogClock" };
     if (passedArgs != null) {
