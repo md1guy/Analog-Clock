@@ -93,7 +93,6 @@ void DrawMinutesClockwise() {
   
   LocalDateTime now = LocalDateTime.now();
   curMinute = Integer.valueOf(mins.format(now));
-  //int tmpMinute = Integer.valueOf(mins.format(now));;
 
   float angle = (360 / 60) *  curMinute - (90);
   float radius = (height + width) / 4 - 10 - 7;
@@ -110,7 +109,6 @@ void DrawHourClockwise() {
   
   LocalDateTime now = LocalDateTime.now();
   curHour = Integer.valueOf(hrs.format(now));
-  //int tmpHour = Integer.valueOf(hrs.format(now));;
 
   float angle = (360 / 60) *  curHour - (90);
   float radius = (height + width) / 4 - 10 - 7;
