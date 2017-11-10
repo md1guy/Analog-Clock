@@ -8,7 +8,7 @@ DateTimeFormatter hrs = DateTimeFormatter.ofPattern("HH");
 int curSecond = 0, curMinute = 0, curHour = 0;
 
 void setup() {
-  size(640, 480);
+  size(300, 300);
 }
 
 void draw() {
@@ -34,7 +34,7 @@ void DrawTimeline() {
 
   for (int i = 0; i < 4; i++) {
     float angle = (360 / 4) * i;
-    float radius = (height + width) / 2 / 4;
+    float radius = (height + width) / 4 - 10 ;
       
     float posX = cos(radians(angle)) * radius + width / 2;
     float posY = sin(radians(angle)) * radius + height / 2;
@@ -45,7 +45,7 @@ void DrawTimeline() {
   strokeWeight(5);
   for (int i = 0; i < 12; i++) {
     float angle = (360 / 12) * i;
-    float radius = (height + width) / 2 / 4;
+    float radius = (height + width) / 4 - 10 ;
       
     float posX = cos(radians(angle)) * radius + width / 2;
     float posY = sin(radians(angle)) * radius + height / 2;
@@ -56,7 +56,7 @@ void DrawTimeline() {
   strokeWeight(2);
   for (int i = 0; i < 60; i++) {
     float angle = (360 / 60) * i;
-    float radius = (height + width) / 2 / 4;
+    float radius = (height + width) / 4 - 10 ;
       
     float posX = cos(radians(angle)) * radius + width / 2;
     float posY = sin(radians(angle)) * radius + height / 2;
@@ -79,7 +79,7 @@ void DrawSecondsClockwise() {
   } while(tmpSecond == curSecond);
   
   float angle = (360 / 60) *  curSecond - (90 - 360 / 60);
-  float radius = (height + width) / 2 / 4 - 7;
+  float radius = (height + width) / 4 - 10 - 7;
     
   float posX = cos(radians(angle)) * radius + width / 2;
   float posY = sin(radians(angle)) * radius + height / 2;
@@ -96,7 +96,7 @@ void DrawMinutesClockwise() {
   //int tmpMinute = Integer.valueOf(mins.format(now));;
 
   float angle = (360 / 60) *  curMinute - (90);
-  float radius = (height + width) / 2 / 4 - 7;
+  float radius = (height + width) / 4 - 10 - 7;
     
   float posX = cos(radians(angle)) * radius + width / 2;
   float posY = sin(radians(angle)) * radius + height / 2;
@@ -113,7 +113,7 @@ void DrawHourClockwise() {
   //int tmpHour = Integer.valueOf(hrs.format(now));;
 
   float angle = (360 / 60) *  curHour - (90);
-  float radius = (height + width) / 2 / 4 - 7;
+  float radius = (height + width) / 4 - 10 - 7;
     
   float posX = cos(radians(angle)) * radius + width / 2;
   float posY = sin(radians(angle)) * radius + height / 2;
