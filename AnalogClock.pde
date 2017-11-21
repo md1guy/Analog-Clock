@@ -89,13 +89,13 @@ void DrawSecondsClockwise() {
 
 void DrawMinutesClockwise() {
   stroke(255);
-  strokeWeight(2);
+  strokeWeight(3);
   
   LocalDateTime now = LocalDateTime.now();
   curMinute = Integer.valueOf(mins.format(now));
 
   float angle = (360 / 60) *  curMinute - (90);
-  float radius = (height + width) / 4 - 10 - 7;
+  float radius = 5 * ((height + width) / 4 - 10 - 7) / 6;
     
   float posX = cos(radians(angle)) * radius + width / 2;
   float posY = sin(radians(angle)) * radius + height / 2;
@@ -105,13 +105,13 @@ void DrawMinutesClockwise() {
 
 void DrawHourClockwise() {
   stroke(255);
-  strokeWeight(3);
+  strokeWeight(5);
   
   LocalDateTime now = LocalDateTime.now();
   curHour = Integer.valueOf(hrs.format(now));
 
   float angle = (360 / 60) *  curHour - (90);
-  float radius = (height + width) / 4 - 10 - 7;
+  float radius = 4 * ((height + width) / 4 - 10 - 7) / 6;
     
   float posX = cos(radians(angle)) * radius + width / 2;
   float posY = sin(radians(angle)) * radius + height / 2;
