@@ -117,8 +117,8 @@ void DrawHourClockwise() {
   float angle = map(curTime, 0, 720, 0, 360) - 90;
   float radius = 4 * ((height + width) / 4 - 10 - 7) / 6;
     
-  float posX = cos(radians(angle)) * radius + width / 2;
-  float posY = sin(radians(angle)) * radius + height / 2;
+  float posX = cos(radians(angle)) * radius + width / 2 - 10;
+  float posY = sin(radians(angle)) * radius + height / 2 - 10;
   
   line(width / 2, height / 2, posX, posY);
 }
