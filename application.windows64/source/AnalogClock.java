@@ -98,7 +98,8 @@ public void DrawSecondsClockwise() {
     tmpSecond = Integer.valueOf(secs.format(now));
   } while(tmpSecond == curSecond);
   
-  float angle = (360 / 60) *  curSecond - (90 - 360 / 60);
+  //float angle = (360 / 60) *  curSecond - (90 - 360 / 60);
+  float angle = map(curSecond, 0, 59, 0, 354) - 84;
   float radius = (height + width) / 4 - 10 - 7;
     
   float posX = cos(radians(angle)) * radius + width / 2;
@@ -109,13 +110,14 @@ public void DrawSecondsClockwise() {
 
 public void DrawMinutesClockwise() {
   stroke(255);
-  strokeWeight(2);
+  strokeWeight(3);
   
   LocalDateTime now = LocalDateTime.now();
   curMinute = Integer.valueOf(mins.format(now));
 
-  float angle = (360 / 60) *  curMinute - (90);
-  float radius = (height + width) / 4 - 10 - 7;
+  //float angle = (360 / 60) *  curMinute - (90);
+  float angle = map(curMinute, 0, 59, 0, 354) - 90;
+  float radius = 5 * ((height + width) / 4 - 10 - 7) / 6;
     
   float posX = cos(radians(angle)) * radius + width / 2;
   float posY = sin(radians(angle)) * radius + height / 2;
@@ -125,16 +127,18 @@ public void DrawMinutesClockwise() {
 
 public void DrawHourClockwise() {
   stroke(255);
-  strokeWeight(3);
+  strokeWeight(5);
   
   LocalDateTime now = LocalDateTime.now();
   curHour = Integer.valueOf(hrs.format(now));
+  curMinute = Integer.valueOf(mins.format(now));
 
-  float angle = (360 / 60) *  curHour - (90);
-  float radius = (height + width) / 4 - 10 - 7;
+  float curTime = (curHour * 60 + curMinute) % (12 * 60);
+  float angle = map(curTime, 0, 720, 0, 360) - 90;
+  float radius = 4 * ((height + width) / 4 - 10 - 7) / 6;
     
-  float posX = cos(radians(angle)) * radius + width / 2;
-  float posY = sin(radians(angle)) * radius + height / 2;
+  float posX = cos(radians(angle)) * radius + width / 2 - 10;
+  float posY = sin(radians(angle)) * radius + height / 2 - 10;
   
   line(width / 2, height / 2, posX, posY);
 }
